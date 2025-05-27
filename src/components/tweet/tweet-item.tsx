@@ -1,6 +1,7 @@
 "use client"
 
 import { Tweet } from "@/types/tweet";
+import { formatRelativeTime } from "@/utils/format-relative";
 import { faComment, faHeart } from "@fortawesome/free-regular-svg-icons";
 import { faRetweet, faHeart as faHeartFilled } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -29,12 +30,12 @@ export const TweetItem = ({ tweet }: Props) => {
             <div className="flex-1">
                 <div className="flex flex-wrap items-center gap-x-3">
                     <div className="font-bold text-lg">
-                        <Link href={`/${tweet.user.slug}`}>
+                        <Link href={`/${tweet.user.slug}`}> 
                             {tweet.user.name}
                         </Link>
                     </div>
                     <div className="text-xs text-gray-500">
-                        @{tweet.user.slug}
+                        @{tweet.user.slug} - {formatRelativeTime(tweet.dataPost)}
                     </div>
                 </div>
                 <div className="py-4 text-lg">
