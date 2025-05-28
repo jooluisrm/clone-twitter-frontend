@@ -53,7 +53,7 @@ export default function Page() {
                     <Textarea
                         placeholder="Descreva você mesmo"
                         rows={4}
-                        value={user.bio}
+                        defaultValue={user.bio}
                     />
 
                 </label>
